@@ -26,9 +26,35 @@
 
 :closed_book: 성능 향상을 위한 전처리 기법
 * 이미지 표준화 : 데이터를 정규분포처럼 변환하여 데이터 학습 속도와 안정성을 높임
-* 이미지 리사이징 : 모든 이미지 데이터들을 250x250 크기로 고정된 크기로 재조정하여 오류를 줄이고 더욱 정확한 비교가 가능하도록 만듬
+* 이미지 리사이징 : 모든 이미지 데이터들을 150x150 크기로 고정된 크기로 재조정하여 오류를 줄이고 더욱 정확한 비교가 가능하도록 만듬
  
 :blue_book: 모델 구현 계획
+* 데이터 구현 및 전처리
+  + Kaggle에서 제공하는 "Dogs vs Cats" 이미지 데이터셋 활용
+  + 이미지 크기 150x150으로 통일하여 모델 입력 정규화
+  + RGB 이미지 픽셀값 정규화 (0~1 범위)
+* 모델 구성
+  + Sequential 모델로 구성
+  + Convolution Layer + Polling Layer 기법을 모델 조합에 이용
+  + 출력층은 이진 분류에 적합한 Sigmoid 함수를 사용하여 (0:고양이 1:개) 출력
+  
+  ```python
+    model = Sequential
+    ([
+      Conv2D(32, (3,3), activation='relu', input_shape=(150,150,3)),
+      MaxPooling2D(2,2),
+      Conv2D(64, (3,3), activation='relu'),
+      MaxPooling2D(2,2),
+      Conv2D(128, (3,3), activation='relu'),
+      MaxPooling2D(2,2),
+      Flatten(),
+      Dense(512, activation='relu'),
+      Dense(1, activation='sigmoid')
+    ])
+
+* 추가적인 성능 향상 전략
+  + Dropout 기법을 이용하여 과적합 방지. 위 코드의 Flatten() 아래줄에 Dropout(0.5) 수식을 추가
+    - 노드를 줄여 과적합 방지 뿐만 아니라, 모델이 특정 패턴에 의존하는 것을 줄일 수 있다
 
 ## :chart_with_upwards_trend:데이터셋 
 
