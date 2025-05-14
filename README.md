@@ -47,7 +47,7 @@
   ```python
     model = Sequential
     ([
-      Conv2D(32, (3,3), activation='relu', input_shape=(150,150,3)),
+      Conv2D(32, (3,3), activation='relu', input_shape=(250,250,3)),
       MaxPooling2D(2,2),
       Conv2D(64, (3,3), activation='relu'),
       MaxPooling2D(2,2),
