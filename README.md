@@ -62,8 +62,3 @@
       Dense(512, activation='relu'),
       Dense(1, activation='sigmoid')
     ])
-
-
-
-
-
