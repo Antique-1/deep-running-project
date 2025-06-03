@@ -20,6 +20,8 @@
 
 ## :chart_with_upwards_trend:데이터셋 
 
+<img width="775" alt="image" src="https://github.com/user-attachments/assets/e08bea22-6450-4500-b4b4-901373f25b0b" />
+
 * 출처 : [kaggle Dogs vs Cats 이미지 분류 데이터셋](https://www.kaggle.com/c/dogs-vs-cats/data)
 * 총 데이터 수: 훈련 데이터셋 25000장(크기:545MB), 테스트 데이터셋 12500장(크기:272MB)
 
@@ -52,16 +54,18 @@
   ```python
     model = Sequential
     ([
-      Conv2D(32, (3,3), activation='relu', input_shape=(250,250,3)),
-      MaxPooling2D(2,2),
-      Conv2D(64, (3,3), activation='relu'),
-      MaxPooling2D(2,2),
-      Conv2D(128, (3,3), activation='relu'),
-      MaxPooling2D(2,2),
-      Flatten(),
-      Dense(512, activation='relu'),
-      Dense(1, activation='sigmoid')
+        Conv2D(32, (3,3), activation='relu', input_shape=(250,250,3)),
+        MaxPooling2D(2,2),
+        Conv2D(64, (3,3), activation='relu'),
+        MaxPooling2D(2,2),
+        Conv2D(128, (3,3), activation='relu'),
+        MaxPooling2D(2,2),
+        Flatten(),
+        Dropout(0.5),
+        Dense(512, activation='relu'),
+        Dense(1, activation='sigmoid')
     ])
+  
 
  ## :books: 모델 구현 결과 및 비교 분석
 
@@ -96,6 +100,9 @@
   + 기본 CNN 모델에 비해 더 안정적이고 높은 정확도를 보임
 
 ## :arrow_upper_right: 기대 효과
+
+![image](https://github.com/user-attachments/assets/f1e8e664-c3d4-47ce-85fd-bfb9f32aa813)
+
 이번 프로젝트를 통해 이미지 분류에 필수적인 CNN(Convolutional Neural Network) 구조에 대한 실질적인 이해를 바탕으로, 딥러닝 기반의 이미지 분류 모델을 처음부터 끝까지 직접 구현하는 경험을 얻게 됩니다. 단순히 모델을 구성하고 학습하는 것을 넘어, 전처리 및 데이터 증강을 통한 성능 개선, Dropout과 같은 과적합 방지 기법 적용, 그리고 전이 학습 모델(VGG16)과의 비교 분석을 통해 모델 선택 및 최적화의 실전 감각을 익힐 수 있습니다.
 
 또한, Kaggle 데이터셋을 기반으로 실무에서 자주 접할 수 있는 데이터 정제, 폴더 구조 재정리, 평가용 데이터 분할 등의 실제 프로젝트에서 요구되는 데이터 핸들링 역량도 함께 강화할 수 있습니다.
