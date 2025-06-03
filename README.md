@@ -62,7 +62,7 @@
       Dense(512, activation='relu'),
       Dense(1, activation='sigmoid')
     ])
- ## :books:모델 설명 및 구현 계획
+ ## :books:모델 구현 결과 및 비교 분석
   
 
   
