@@ -62,7 +62,43 @@
       Dense(512, activation='relu'),
       Dense(1, activation='sigmoid')
     ])
- ## :books:모델 구현 결과 및 비교 분석
-  
 
-  
+ ## :books: 모델 구현 결과 및 비교 분석
+
+:green_book: 기본 CNN 모델 성능
+* 구성: Conv2D → MaxPooling → Conv2D → MaxPooling → Conv2D → MaxPooling → Flatten → Dense → Dropout → Dense
+
+  + 정규화: 픽셀값을 0~1 범위로 정규화
+
+  + 리사이징: 모든 이미지를 250x250으로 고정
+
+  + Dropout: 0.5 적용하여 과적합 방지
+
+* 결과 요약
+
+  + 최고 Validation Accuracy: 약 XX%
+
+  + 과적합 방지에 효과적이나, 데이터 양이 한정적일 경우 높은 일반화 성능은 어려움
+
+:closed_book: VGG16 전이 학습 모델 성능
+* 구성: VGG16 base (include_top=False) + GlobalAveragePooling2D + Dropout + Dense
+
+  + 사전 학습된 가중치: ImageNet 사용
+
+  + fine-tuning 없이 feature extractor로만 사용
+
+* 결과 요약
+
+  + 최고 Validation Accuracy: 약 YY%
+
+  + 사전 학습된 모델 덕분에 적은 에포크 수로도 높은 성능 확보 가능
+
+  + 기본 CNN 모델에 비해 더 안정적이고 높은 정확도를 보임
+
+## :arrow_upper_right: 기대 효과
+이번 프로젝트를 통해 이미지 분류에 필수적인 CNN(Convolutional Neural Network) 구조에 대한 실질적인 이해를 바탕으로, 딥러닝 기반의 이미지 분류 모델을 처음부터 끝까지 직접 구현하는 경험을 얻게 됩니다. 단순히 모델을 구성하고 학습하는 것을 넘어, 전처리 및 데이터 증강을 통한 성능 개선, Dropout과 같은 과적합 방지 기법 적용, 그리고 전이 학습 모델(VGG16)과의 비교 분석을 통해 모델 선택 및 최적화의 실전 감각을 익힐 수 있습니다.
+
+또한, Kaggle 데이터셋을 기반으로 실무에서 자주 접할 수 있는 데이터 정제, 폴더 구조 재정리, 평가용 데이터 분할 등의 실제 프로젝트에서 요구되는 데이터 핸들링 역량도 함께 강화할 수 있습니다.
+
+최종적으로는 CNN을 이용한 이미지 분류 모델의 구축부터 평가까지의 전 과정을 경험함으로써, 향후 의료 영상 분석, 보안 모니터링, 자율주행 등 다양한 산업 분야에 적용 가능한 컴퓨터 비전 기술에 대한 기반을 탄탄히 다질 수 있을 것입니다.
+
