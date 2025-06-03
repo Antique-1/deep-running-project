@@ -18,6 +18,10 @@
 
 * 실제 산업 프로젝트에서 자주 활용되는 전처리 전략과 모델 최적화 과정의 실전 경험을 얻고자 이번 프로젝트를 선택했습니다
 
+## :chart_with_upwards_trend:데이터셋 
+
+* 출처 : [kaggle Dogs vs Cats 이미지 분류 데이터셋](https://www.kaggle.com/c/dogs-vs-cats/data)
+* 총 데이터 수: 훈련 데이터셋 25000장(크기:545MB), 테스트 데이터셋 12500장(크기:272MB)
 
 ## :books:모델 설명 및 구현 계획
 
@@ -66,9 +70,6 @@
   + 14주차 : 최종 점검및 프로젝트MD파일 재검토 및 수정 후 제출
   
 
-## :chart_with_upwards_trend:데이터셋 
 
-* 출처 : [kaggle Dogs vs Cats 이미지 분류 데이터셋](https://www.kaggle.com/c/dogs-vs-cats/data)
-* 총 데이터 수: 훈련 데이터셋 25000장(크기:545MB), 테스트 데이터셋 12500장(크기:272MB)
 
 
