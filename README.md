@@ -95,7 +95,7 @@
 
   + Dropout: 0.5 적용하여 과적합 방지
 
-* 결과 요약
+* 결과 
 
   ....
  
@@ -108,9 +108,13 @@
 
   + fine-tuning 없이 feature extractor로만 사용
 
-* 결과 요약
+* 결과 
 
  ....
+
+:blue_book: 두 학습 모델간 성능 차이 비교 분석
+
+...
 
 ## :arrow_upper_right: 기대 효과
 
