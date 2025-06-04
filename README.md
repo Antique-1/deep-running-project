@@ -97,7 +97,7 @@
 
 * 결과 요약
 
-  + 최고 Validation Accuracy: 약 XX%
+  + 최고 Validation Accuracy: 
 
   + 과적합 방지에 효과적이나, 데이터 양이 한정적일 경우 높은 일반화 성능은 어려움
 
@@ -111,7 +111,7 @@
 
 * 결과 요약
 
-  + 최고 Validation Accuracy: 약 YY%
+  + 최고 Validation Accuracy: 
 
   + 사전 학습된 모델 덕분에 적은 에포크 수로도 높은 성능 확보 가능
 
