@@ -117,7 +117,8 @@
 
 :blue_book: 두 학습 모델간 성능 차이 비교 분석
 
-<img width="259" alt="aa2" src="https://github.com/user-attachments/assets/b4e2703b-3e3a-4d00-9c19-6ec784dd09f1" />
+<img width="600" alt="aa22" src="https://github.com/user-attachments/assets/af262aad-ae72-43f3-aaca-95292a8d93f4" />
+
 
 ...
 
