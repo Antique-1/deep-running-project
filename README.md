@@ -66,7 +66,7 @@
     
   + 출력층은 이진 분류에 적합한 Sigmoid 함수를 사용하여 (0:고양이 1:개) 출력
     
-  + Dropout 기법을 이용하여 과적합 방지. 위 코드의 GlobalAveragePooling2D() 아래줄에 Dropout(0.5) 수식을 추가
+  + Dropout 기법을 이용하여 과적합 방지. 위 코드의 Flatten() 아래줄에 Dropout(0.5) 수식을 추가
     + 노드를 줄여 과적합 방지 뿐만 아니라, 모델이 특정 패턴에 의존하는 것을 줄일 수 있다
   
   ```python
@@ -78,7 +78,7 @@
         MaxPooling2D(2,2),
         Conv2D(128, (3,3), activation='relu'),
         MaxPooling2D(2,2),
-        GlobalAveragePooling2D(),
+        Flatten(),
         Dropout(0.5),
         Dense(512, activation='relu'),
         Dense(1, activation='sigmoid')
