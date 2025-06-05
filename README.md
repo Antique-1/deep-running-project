@@ -109,11 +109,15 @@
 
   + fine-tuning 없이 feature extractor로만 사용
 
-* 결과 
+* 결과
+  
+<img width="740" alt="aaq" src="https://github.com/user-attachments/assets/67ca13c2-d841-470a-95b0-878e2e12edb5" />
 
  ....
 
 :blue_book: 두 학습 모델간 성능 차이 비교 분석
+
+<img width="259" alt="aa2" src="https://github.com/user-attachments/assets/b4e2703b-3e3a-4d00-9c19-6ec784dd09f1" />
 
 ...
 
