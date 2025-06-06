@@ -109,7 +109,6 @@
 
   + 사전 학습된 가중치: ImageNet 사용
 
-  + fine-tuning 없이 feature extractor로만 사용
 
 * 결과
   
