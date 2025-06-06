@@ -96,7 +96,9 @@
 
   + Dropout: 0.5 적용하여 과적합 방지
 
-* 결과 
+* 결과
+  
+<img width="749" alt="bb" src="https://github.com/user-attachments/assets/c01b78f7-95c3-48b0-beba-a3f30bf1c11b" />
 
   ....
  
