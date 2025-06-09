@@ -30,9 +30,9 @@
 
 :green_book: 모델 구조
 
-* 기본 모델은 CNN 기술 모델을 활용할 것이며, 출력은 개 vs 고양이 두 가지 클래스로 분류하는 이진 분류로 출력
+* 기본 모델을 활용한 CNN 기술 모델과, 전이학습을 적용한 모델을 활용해 비교 분석할 것이며, 출력은 개 vs 고양이 두 가지 클래스로 분류하는 이진 분류로 출력
   
-* Convolution Layer + Polling Layer 이용한 CNN 모델
+* Convolution Layer + Polling Layer 이용한 CNN 모델, 전이학습이 적용된 VCG16모델
   
 :closed_book: 성능 향상을 위한 전처리 기법
 
@@ -100,9 +100,14 @@
   
 <img width="749" alt="bb" src="https://github.com/user-attachments/assets/c01b78f7-95c3-48b0-beba-a3f30bf1c11b" />
 
-  ....
- 
+  + 최대 검증 정확도: 0.7930
 
+  + 최종 검증 정확도: 0.7930
+
+  + 최종 검증 손실: 0.4372
+ 
+    - 정확도 및 손실이 점진적으로 개선되며, 오버피팅 없이 안정적인 학습 진행
+    - 하지만 정확도 상승이 0.79 선에서 정체됨 → 모델의 표현력 한계로 해석 가능
 
 :closed_book: VGG16 전이 학습 모델 성능
 * 구성: VGG16 base (include_top=False) + GlobalAveragePooling2D + Dropout + Dense
@@ -114,17 +119,26 @@
   
 <img width="740" alt="aaq" src="https://github.com/user-attachments/assets/67ca13c2-d841-470a-95b0-878e2e12edb5" />
 
- ....
+  + 최대 검증 정확도: 0.9718
 
-:blue_book: 두 학습 모델간 성능 차이 비교 분석
+  + 최종 검증 정확도: 0.9686
+
+  + 최종 검증 손실: 0.0791
+
+    - 초기부터 매우 높은 정확도와 낮은 손실값을 보이며 그래프가 빠르게 상승
+    - 검증 정확도와 손실 모두 안정적으로 유지되며 강력한 성능을 보임  
+
+:blue_book: 두 학습 모델간 성능 차이 비교 분석 및 결론
 
 <img width="400" alt="cc" src="https://github.com/user-attachments/assets/0f85f6b1-bc3a-43ee-b1b0-bea72a6388d8" />
 
+* 성능 차이 원인 분석
+  + 기본 모델은 사전 학습된 모델이 아니라서 학습 데이터에 크게 의존하며, 복잡한 특징을 충분히 학습하지 못함
+  + VGG16 모델은 ImageNet으로 사전 학습된 모델의 강점을 활용해 소량의 학습 데이터로도 높은 정확도를 달성
 
-
-
-...
-
+* 결론
+  + 전이학습을 적용한 VGG16 모델이 정확도, 손실, 학습 속도, 일반화 측면에서 모두 우수한 성능을 보이며, 특히 제한된 데이터셋 환경에서 효과적임을 확인할 수 있음
+    
 ## :arrow_upper_right: 기대 효과
 
 ![image](https://github.com/user-attachments/assets/f1e8e664-c3d4-47ce-85fd-bfb9f32aa813)
