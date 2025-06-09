@@ -44,7 +44,7 @@
 
 * 이미지 정규화 및 회전 같은 전처리는 그대로 사용, 하지만 추가적으로 이미지 리사이징을 통해 추가적으로 성능을 향상
   
-* VCG16방식의 사전에 학습된 이미지 분류 모델 사용이 아닌, Convolution Layer + Polling Layer 이용한 기초적인 CNN 구조 이용
+* VCG16방식의 사전에 학습된 이미지 분류 모델만을 사용한 것이 아닌, Convolution Layer + Polling Layer 이용한 기초적인 CNN 구조도 추가로 모델링해 둘을 비교분석
 
 :orange_book: 모델 구현 계획
 
@@ -58,7 +58,7 @@
   + RGB 이미지 픽셀값 정규화 (0~1 범위)
 
     
-* 모델 구성
+* CNN 모델 구성
 
   + Sequential 모델로 구성
     
